@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Toast_Swift
 
 class BaseTableViewController<T: BaseViewModel>: UITableViewController, iViewControllerProtocol {
     
@@ -19,7 +20,6 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, iViewCon
         self.tableView.separatorStyle = .none
 
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +38,12 @@ extension BaseTableViewController: BaseViewModelDelegate{
     func didChangeState(_ state: iState) {
         switch state {
         case .showError(let text):
-            break
+            self.view.hideToastActivity()
+            self.view.makeToast(text, position: .center)
         case .showLoading:
-            break
+            self.view.makeToastActivity(.center)
         case .hideLoading:
-            break
+            self.view.hideToastActivity()
         }
     }
 }

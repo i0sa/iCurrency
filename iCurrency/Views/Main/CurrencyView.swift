@@ -14,7 +14,7 @@ class CurrencyView: UIView{
     lazy var stack: UIStackView = {
         let s = UIStackView()
         s.axis = .horizontal
-        s.spacing = 5
+        s.spacing = 8
         return s
     }()
     

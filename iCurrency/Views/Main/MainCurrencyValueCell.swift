@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainCurrencyValueCell: UITableViewCell {
 
@@ -61,6 +62,15 @@ class MainCurrencyValueCell: UITableViewCell {
 
         ])
         
+    }
+    
+    func configure(item: Any?){
+        guard let item = item as? Currency else { return }
+        if let currencyImage = CurrencyImage.getImage(for: item) {
+            currencyView.flagImage.kf.setImage(with: currencyImage)
+        }
+        self.currencyView.currencyLabel.text = item.currency
+        self.currencyValue.text = "\(item.value ?? 0)"
     }
     
     required init?(coder aDecoder: NSCoder) {

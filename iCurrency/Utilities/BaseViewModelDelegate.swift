@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 enum iState{
     case showError(text: String)
@@ -17,12 +16,4 @@ enum iState{
 
 protocol BaseViewModelDelegate: class {
     func didChangeState(_ state: iState)
-}
-
-protocol BaseViewModel {
-    func viewDidLoad()
-    var coordinator: AppCoordinator? { get set }
-    var network: NetworkClient? { get set }
-    init(coordinator: AppCoordinator?, network: NetworkClient)
-    var delegate: BaseViewModelDelegate? { get set }
 }

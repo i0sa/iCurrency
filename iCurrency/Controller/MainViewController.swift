@@ -14,16 +14,15 @@ class MainViewController: BaseTableViewController<MainViewModel>, iTableViewCont
         registerCells()
         super.viewDidLoad()
         self.tableView.backgroundColor = #colorLiteral(red: 0.899692595, green: 0.9141476154, blue: 0.9235479832, alpha: 1)
+        viewModel.didFinishLoadingItems = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
+
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue() as MainCurrencyValueCell
-        
+        cell.configure(item: viewModel.item(for: indexPath))
         return cell
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -43,16 +42,18 @@ class MainViewController: BaseTableViewController<MainViewModel>, iTableViewCont
         return UITableView.automaticDimension
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return viewModel.numberOfItems
     }
     
     func registerCells() {
         tableView.registerCell(cellClass: TopCurrencyViewCell.self)
         tableView.registerCell(cellClass: MainCurrencyValueCell.self)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }

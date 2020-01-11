@@ -15,12 +15,12 @@ class CurrencyImage{
         case big = 64
     }
     
-    class func getImage(for currency: String, size: ImageSizes = .big) -> String? {
+    class func getImage(for currency: Currency, size: ImageSizes = .big) -> URL? {
         if let path = Bundle.main.path(forResource: "Currencies", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 if let json = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as? [String: String] {
-                    if let result = json.first(where: { $0.value == currency }) {
+                    if let result = json.first(where: { $0.value == currency.currency }) {
                         return generateLinkForCountryCode(code: result.key, size: size)
                     }
                     
@@ -33,8 +33,8 @@ class CurrencyImage{
         return nil
     }
     
-    private class func generateLinkForCountryCode(code: String, size: ImageSizes) -> String{
+    private class func generateLinkForCountryCode(code: String, size: ImageSizes) -> URL{
         
-        return "https://www.countryflags.io/\(code.lowercased())/shiny/\(size.rawValue).png"
+        return URL(string: "https://www.countryflags.io/\(code.lowercased())/flat/\(size.rawValue).png")!
     }
 }

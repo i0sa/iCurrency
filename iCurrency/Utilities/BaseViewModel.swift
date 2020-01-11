@@ -9,16 +9,6 @@
 import Foundation
 import UIKit
 
-enum iState{
-    case showError(text: String)
-    case showLoading
-    case hideLoading
-}
-
-protocol BaseViewModelDelegate: class {
-    func didChangeState(_ state: iState)
-}
-
 protocol BaseViewModel {
     func viewDidLoad()
     var coordinator: AppCoordinator? { get set }
