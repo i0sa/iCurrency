@@ -7,13 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-class BaseViewModel {
-    func viewDidLoad(){
-        fatalError("viewDidLoad should be overriden")
-    }
-    
-    init() {
-        
-    }
+protocol BaseViewModel {
+    func viewDidLoad()
 }

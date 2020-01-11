@@ -19,6 +19,7 @@
 		0321509B23C9C1A4003AF743 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321509A23C9C1A4003AF743 /* MainViewModel.swift */; };
 		0321509D23C9C333003AF743 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321509C23C9C333003AF743 /* BaseTableViewController.swift */; };
 		0321509F23C9C90E003AF743 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321509E23C9C90E003AF743 /* CurrencyView.swift */; };
+		032150A123C9CF9E003AF743 /* MainCurrencyValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150A023C9CF9E003AF743 /* MainCurrencyValueCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		0321509A23C9C1A4003AF743 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0321509C23C9C333003AF743 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		0321509E23C9C90E003AF743 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
+		032150A023C9CF9E003AF743 /* MainCurrencyValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCurrencyValueCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				0321508D23C9BB7B003AF743 /* TopCurrencyViewCell.swift */,
+				032150A023C9CF9E003AF743 /* MainCurrencyValueCell.swift */,
 			);
 			path = "Main - Cells";
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			files = (
 				0321509D23C9C333003AF743 /* BaseTableViewController.swift in Sources */,
 				0321509F23C9C90E003AF743 /* CurrencyView.swift in Sources */,
+				032150A123C9CF9E003AF743 /* MainCurrencyValueCell.swift in Sources */,
 				0321509523C9BDD7003AF743 /* iViewControllerProtocol.swift in Sources */,
 				0321509223C9BBC2003AF743 /* UITableView+Extentions.swift in Sources */,
 				0321507923C9B755003AF743 /* MainViewController.swift in Sources */,

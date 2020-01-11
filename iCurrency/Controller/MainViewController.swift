@@ -8,8 +8,14 @@
 
 import UIKit
 
-class MainViewController: BaseTableViewController {
+class MainViewController: BaseTableViewController<MainViewModel>, iTableViewControllerProtocol {
     
+    override func viewDidLoad() {
+        registerCells()
+        super.viewDidLoad()        
+    }
+    
+
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeue() as TopCurrencyViewCell
         
@@ -21,5 +27,9 @@ class MainViewController: BaseTableViewController {
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func registerCells() {
+        tableView.registerCell(cellClass: TopCurrencyViewCell.self)
     }
 }

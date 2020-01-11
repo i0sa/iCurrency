@@ -8,11 +8,12 @@
 
 import UIKit
 
-class TopCurrencyViewCell: UITableViewHeaderFooterView {
+class MainCurrencyValueCell: UITableViewHeaderFooterView {
 
     lazy var stack: UIStackView = {
         let s = UIStackView()
         s.axis = .horizontal
+        s.distribution = .equalCentering
         s.spacing = 5
         return s
     }()
@@ -22,11 +23,10 @@ class TopCurrencyViewCell: UITableViewHeaderFooterView {
         return c
     }()
     
-    lazy var bottomArrowImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "BottomArrow")
-        image.tintColor = .white
-        return image
+    lazy var currencyValue: UILabel = {
+        let label = UILabel()
+        label.text = "500 EGP"
+        return label
     }()
     
     override init(reuseIdentifier: String?) {
@@ -35,29 +35,28 @@ class TopCurrencyViewCell: UITableViewHeaderFooterView {
     }
     
     func setup(){
-//        self.contentView.backgroundColor = UIColor(red:0.74, green:0.88, blue:0.90, alpha:1.0)
         self.contentView.backgroundColor = .white
         self.addSubview(stack)
         stack.addArrangedSubview(currencyView)
-//        stack.addArrangedSubview(bottomArrowImage)
 
         setupConstraints()
     }
     
     func setupConstraints(){
         stack.translatesAutoresizingMaskIntoConstraints = false
-        bottomArrowImage.translatesAutoresizingMaskIntoConstraints = false
+        currencyValue.translatesAutoresizingMaskIntoConstraints = false
         currencyView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             // Stack
-            stack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            stack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            stack.topAnchor.constraint(equalTo: self.topAnchor),
+            stack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            stack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            stack.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stack.heightAnchor.constraint(equalToConstant: 30),
             // Flag Image
-            bottomArrowImage.widthAnchor.constraint(equalToConstant: 20),
+//            bottomArrowImage.xwidthAnchor.constraint(equalToConstant: 20),
 
         ])
-
     }
     
     required init?(coder aDecoder: NSCoder) {

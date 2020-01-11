@@ -9,13 +9,11 @@
 import Foundation
 import UIKit
 
-class BaseTableViewController: UITableViewController, iTableViewControllerProtocol {
+class BaseTableViewController<T: BaseViewModel>: UITableViewController, iViewControllerProtocol {
     
-    typealias viewModel = BaseViewModel
-    var viewModel: BaseViewModel!
+    var viewModel: T!
     
-    
-    required init(viewModel: BaseViewModel) {
+    required init(viewModel: T) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -23,15 +21,10 @@ class BaseTableViewController: UITableViewController, iTableViewControllerProtoc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.registerCells()
         self.viewModel.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
-    
-    func registerCells() {
-        tableView.registerCell(cellClass: TopCurrencyViewCell.self)
-    }
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
