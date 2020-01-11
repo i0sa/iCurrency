@@ -18,6 +18,7 @@
 		0321509923C9BEFB003AF743 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321509823C9BEFB003AF743 /* BaseViewModel.swift */; };
 		0321509B23C9C1A4003AF743 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321509A23C9C1A4003AF743 /* MainViewModel.swift */; };
 		0321509D23C9C333003AF743 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321509C23C9C333003AF743 /* BaseTableViewController.swift */; };
+		0321509F23C9C90E003AF743 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321509E23C9C90E003AF743 /* CurrencyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0321509823C9BEFB003AF743 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		0321509A23C9C1A4003AF743 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0321509C23C9C333003AF743 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		0321509E23C9C90E003AF743 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +68,9 @@
 		0321507523C9B755003AF743 /* iCurrency */ = {
 			isa = PBXGroup;
 			children = (
+				0321508C23C9BA07003AF743 /* Common */,
 				0321509323C9BDAF003AF743 /* Protocols */,
 				0321509023C9BBB6003AF743 /* Utilities */,
-				0321508C23C9BA07003AF743 /* Common */,
 				0321508823C9B9EF003AF743 /* Controller */,
 				0321508B23C9BA01003AF743 /* Views */,
 				0321508A23C9B9F8003AF743 /* ViewModel */,
@@ -106,6 +108,7 @@
 		0321508B23C9BA01003AF743 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0321509E23C9C90E003AF743 /* CurrencyView.swift */,
 				0321508F23C9BB85003AF743 /* Main - Cells */,
 			);
 			path = Views;
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0321509D23C9C333003AF743 /* BaseTableViewController.swift in Sources */,
+				0321509F23C9C90E003AF743 /* CurrencyView.swift in Sources */,
 				0321509523C9BDD7003AF743 /* iViewControllerProtocol.swift in Sources */,
 				0321509223C9BBC2003AF743 /* UITableView+Extentions.swift in Sources */,
 				0321507923C9B755003AF743 /* MainViewController.swift in Sources */,

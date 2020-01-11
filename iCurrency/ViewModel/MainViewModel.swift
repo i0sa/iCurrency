@@ -9,5 +9,7 @@
 import Foundation
 
 class MainViewModel: BaseViewModel {
-    
+    override func viewDidLoad() {
+        print("Hey !")
+    }
 }

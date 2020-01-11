@@ -24,6 +24,7 @@ class BaseTableViewController: UITableViewController, iTableViewControllerProtoc
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCells()
+        self.viewModel.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     

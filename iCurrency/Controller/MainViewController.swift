@@ -15,6 +15,10 @@ class MainViewController: BaseTableViewController {
         
         return view
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 70
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
