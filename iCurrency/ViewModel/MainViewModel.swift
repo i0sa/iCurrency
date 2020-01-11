@@ -20,6 +20,7 @@ class MainViewModel: BaseViewModel {
     
     func viewDidLoad() {
         print("Hey !")
+        delegate?.didChangeState(.showLoading)
 //        loadCurrencies()
     }
     

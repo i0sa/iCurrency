@@ -1,20 +1,26 @@
 PODS:
   - Alamofire (4.9.1)
-  - SkeletonView (1.8.2)
+  - Kingfisher (5.12.0):
+    - Kingfisher/Core (= 5.12.0)
+  - Kingfisher/Core (5.12.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
-  - SkeletonView
+  - Kingfisher
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - SkeletonView
+    - Kingfisher
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
+  Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: b29d67a976b999053beecc72ee18fe947878754e
+PODFILE CHECKSUM: 99ba6d34adf1c492c1b5caa33a79284770b72c3c
 
 COCOAPODS: 1.6.1

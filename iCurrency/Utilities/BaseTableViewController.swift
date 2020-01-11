@@ -17,6 +17,7 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, iViewCon
         self.viewModel = viewModel
         super.init(style: .grouped)
         self.tableView.separatorStyle = .none
+
     }
     
     
@@ -24,6 +25,7 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, iViewCon
         super.viewDidLoad()
         self.viewModel.delegate = self
         self.viewModel.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
     

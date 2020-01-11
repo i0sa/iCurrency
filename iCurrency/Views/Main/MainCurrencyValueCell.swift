@@ -15,6 +15,7 @@ class MainCurrencyValueCell: UITableViewCell {
         s.axis = .horizontal
         s.distribution = .equalCentering
         s.spacing = 5
+        
         return s
     }()
     
@@ -41,7 +42,7 @@ class MainCurrencyValueCell: UITableViewCell {
         self.addSubview(stack)
         stack.addArrangedSubview(currencyView)
         stack.addArrangedSubview(currencyValue)
-
+        
         setupConstraints()
     }
     
@@ -59,10 +60,12 @@ class MainCurrencyValueCell: UITableViewCell {
             // Flag Image
 
         ])
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+ 
     
 }

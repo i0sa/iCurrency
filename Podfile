@@ -7,6 +7,7 @@ target 'iCurrency' do
 
   # Pods for iCurrency
 pod "Alamofire"
-pod "SkeletonView"
+pod "Kingfisher"
+pod 'Toast-Swift', '~> 5.0.1'
 
 end
