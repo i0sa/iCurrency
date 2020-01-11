@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("test")
-        // Do any additional setup after loading the view.
+class MainViewController: BaseTableViewController {
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeue() as TopCurrencyViewCell
+        
+        return view
     }
-
-
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 }
-
