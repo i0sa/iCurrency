@@ -9,10 +9,13 @@
 import Foundation
 
 class CurrencyConvertorViewModel: BaseViewModel {
-    var coordinator: AppCoordinator?
+    weak var delegate: BaseViewModelDelegate?
+    weak var coordinator: AppCoordinator?
+    var network: NetworkClient?
     
-    required init(coordinator: AppCoordinator?) {
+    required init(coordinator: AppCoordinator?, network: NetworkClient = NetworkClient()) {
         self.coordinator = coordinator
+        self.network = network
     }
     
     func viewDidLoad() {

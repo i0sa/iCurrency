@@ -9,14 +9,26 @@
 import Foundation
 
 class MainViewModel: BaseViewModel {
-    var coordinator: AppCoordinator?
+    weak var delegate: BaseViewModelDelegate?
+    weak var coordinator: AppCoordinator?
+    var network: NetworkClient?
     
-    required init(coordinator: AppCoordinator?) {
+    required init(coordinator: AppCoordinator?, network: NetworkClient = NetworkClient()) {
         self.coordinator = coordinator
+        self.network = network
     }
     
     func viewDidLoad() {
         print("Hey !")
+//        loadCurrencies()
+    }
+    
+    func loadCurrencies(){
+        network?.performRequest(CurrencyResponse.self, router: .GetCurrencies, success: { (models) in
+            print(models)
+        }, failure: { (error) in
+            print("error")
+        })
     }
     
     func didSelectItem(at indexPath: IndexPath){

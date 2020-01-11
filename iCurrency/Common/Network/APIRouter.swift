@@ -10,45 +10,29 @@ import Alamofire
 
 enum APIRouter: URLRequestConvertible {
     
-    case getTodoLists
-    case addToDo(title: String, description: String)
+    case GetCurrencies
     
     var method: HTTPMethod {
         switch self {
-        case .getTodoLists:
+        case .GetCurrencies:
             return .get
-        case .addToDo(_, _):
-            return .post
         }
     }
     
     var path: String {
         switch self {
-        case .getTodoLists:
-            return "list.php"
-        case .addToDo(_, _):
-            return "add.php"
+        case .GetCurrencies:
+            return "latest"
         }
     }
     
     var parameters: Parameters? {
         switch self {
-        case .getTodoLists:
+        case .GetCurrencies:
             return nil
-        case .addToDo(let title, let description):
-            return ["title": title, "desc": description]
         }
     }
     
-    // this is for authentication, allow all, and maybe disable for some
-    var AuthRequired: Bool {
-        switch self {
-        case .getTodoLists:
-            return false
-        default:
-            return true
-        }
-    }
     
     func asURLRequest() throws -> URLRequest {
         let url = try Constants.baseURL.asURL().appendingPathComponent(path)
@@ -61,18 +45,12 @@ enum APIRouter: URLRequestConvertible {
         
         request.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
-        if(AuthRequired){
-//            if(AuthManager.loggedIn) {
-//                request.setValue(AuthManager.authKey(), forHTTPHeaderField: HTTPHeaderField.authentication.rawValue)
-//            }
-        }
-        
+        var params: [String: Any] = ["access_key": Constants.AccessKey]
         if let parameters = parameters {
-            return try URLEncoding.default.encode(request, with: parameters)
-            
+            // quick merge !
+            parameters.forEach { (key, value) in params[key] = value }
         }
-        
-        return request
+        return try URLEncoding.default.encode(request, with: params)
     }
     
     

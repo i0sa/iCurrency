@@ -8,7 +8,8 @@
 import Foundation
 
 struct Constants {
-    static let baseURL = "http://i0sa.com/codezilla/api/"
+    static let baseURL = "http://data.fixer.io/api/"
+    static let AccessKey = "aaf6f70ab41b6787f4ab2b7954a9f61e"
 }
 
 

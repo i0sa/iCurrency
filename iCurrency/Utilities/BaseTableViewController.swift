@@ -22,12 +22,25 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, iViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewModel.delegate = self
         self.viewModel.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension BaseTableViewController: BaseViewModelDelegate{
+    func didChangeState(_ state: iState) {
+        switch state {
+        case .showError(let text):
+            break
+        case .showLoading:
+            break
+        case .hideLoading:
+            break
+        }
     }
 }
