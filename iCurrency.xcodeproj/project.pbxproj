@@ -34,6 +34,11 @@
 		032150D523CA5914003AF743 /* Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 032150CD23CA5914003AF743 /* Proxima Nova Bold.otf */; };
 		032150D623CA5914003AF743 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 032150CE23CA5914003AF743 /* ProximaNova-Regular.otf */; };
 		032150D723CA5914003AF743 /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 032150CF23CA5914003AF743 /* Proxima Nova Thin.otf */; };
+		032150DB23CA5C78003AF743 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150DA23CA5C78003AF743 /* NetworkClient.swift */; };
+		032150DD23CA5C8F003AF743 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150DC23CA5C8F003AF743 /* APIRouter.swift */; };
+		032150DF23CA5CAE003AF743 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150DE23CA5CAE003AF743 /* Constants.swift */; };
+		032150E123CA6109003AF743 /* Currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 032150E023CA6109003AF743 /* Currencies.json */; };
+		032150E423CA6136003AF743 /* CurrencyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150E323CA6136003AF743 /* CurrencyImage.swift */; };
 		CBAC60598D9410627661E835 /* Pods_iCurrency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16B127495220B0160E379B1 /* Pods_iCurrency.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +72,12 @@
 		032150CD23CA5914003AF743 /* Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold.otf"; sourceTree = "<group>"; };
 		032150CE23CA5914003AF743 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		032150CF23CA5914003AF743 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
+		032150D923CA5C20003AF743 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		032150DA23CA5C78003AF743 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		032150DC23CA5C8F003AF743 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		032150DE23CA5CAE003AF743 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		032150E023CA6109003AF743 /* Currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Currencies.json; sourceTree = "<group>"; };
+		032150E323CA6136003AF743 /* CurrencyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyImage.swift; sourceTree = "<group>"; };
 		AF9A4792FA48BA5FA91E48A3 /* Pods-iCurrency.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCurrency.release.xcconfig"; path = "Target Support Files/Pods-iCurrency/Pods-iCurrency.release.xcconfig"; sourceTree = "<group>"; };
 		B16B127495220B0160E379B1 /* Pods_iCurrency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCurrency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4840E1CEB0CCF49E012F339 /* Pods-iCurrency.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCurrency.debug.xcconfig"; path = "Target Support Files/Pods-iCurrency/Pods-iCurrency.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,7 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				0321507623C9B755003AF743 /* AppDelegate.swift */,
+				032150D823CA5C00003AF743 /* Network */,
 				032150C623CA5908003AF743 /* Resources */,
+				032150E223CA6129003AF743 /* Currency Image */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -225,13 +238,32 @@
 			path = Proxima;
 			sourceTree = "<group>";
 		};
+		032150D823CA5C00003AF743 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				032150D923CA5C20003AF743 /* README.md */,
+				032150DA23CA5C78003AF743 /* NetworkClient.swift */,
+				032150DC23CA5C8F003AF743 /* APIRouter.swift */,
+				032150DE23CA5CAE003AF743 /* Constants.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		032150E223CA6129003AF743 /* Currency Image */ = {
+			isa = PBXGroup;
+			children = (
+				032150E023CA6109003AF743 /* Currencies.json */,
+				032150E323CA6136003AF743 /* CurrencyImage.swift */,
+			);
+			path = "Currency Image";
+			sourceTree = "<group>";
+		};
 		28F2BD08F9C6F1FBBCE0987F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				F4840E1CEB0CCF49E012F339 /* Pods-iCurrency.debug.xcconfig */,
 				AF9A4792FA48BA5FA91E48A3 /* Pods-iCurrency.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -303,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032150E123CA6109003AF743 /* Currencies.json in Resources */,
 				032150D023CA5914003AF743 /* Proxima Nova Alt Thin.otf in Resources */,
 				032150D523CA5914003AF743 /* Proxima Nova Bold.otf in Resources */,
 				032150D623CA5914003AF743 /* ProximaNova-Regular.otf in Resources */,
@@ -376,7 +409,10 @@
 				0321509F23C9C90E003AF743 /* CurrencyView.swift in Sources */,
 				032150C523C9DC6E003AF743 /* AppCoordinator.swift in Sources */,
 				032150C223C9DBD8003AF743 /* Coordinator.swift in Sources */,
+				032150DD23CA5C8F003AF743 /* APIRouter.swift in Sources */,
 				032150A123C9CF9E003AF743 /* MainCurrencyValueCell.swift in Sources */,
+				032150E423CA6136003AF743 /* CurrencyImage.swift in Sources */,
+				032150DB23CA5C78003AF743 /* NetworkClient.swift in Sources */,
 				0321509523C9BDD7003AF743 /* iViewControllerProtocol.swift in Sources */,
 				0321509223C9BBC2003AF743 /* UITableView+Extentions.swift in Sources */,
 				0321507923C9B755003AF743 /* MainViewController.swift in Sources */,
@@ -385,6 +421,7 @@
 				0321509723C9BDEB003AF743 /* iTableViewControllerProtocol.swift in Sources */,
 				032150BC23C9DBD8003AF743 /* AppNavigator.swift in Sources */,
 				032150A323C9DB56003AF743 /* CurrencyConvertorViewController.swift in Sources */,
+				032150DF23CA5CAE003AF743 /* Constants.swift in Sources */,
 				0321507723C9B755003AF743 /* AppDelegate.swift in Sources */,
 				032150C123C9DBD8003AF743 /* MainNavigator.swift in Sources */,
 				0321508E23C9BB7B003AF743 /* TopCurrencyViewCell.swift in Sources */,
