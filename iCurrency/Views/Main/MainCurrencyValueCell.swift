@@ -66,10 +66,7 @@ class MainCurrencyValueCell: UITableViewCell {
     
     func configure(item: Any?){
         guard let item = item as? Currency else { return }
-        if let currencyImage = CurrencyImage.getImage(for: item) {
-            currencyView.flagImage.kf.setImage(with: currencyImage)
-        }
-        self.currencyView.currencyLabel.text = item.currency
+        currencyView.configure(currency: item)
         self.currencyValue.text = "\(item.value ?? 0)"
     }
     

@@ -13,12 +13,12 @@ class MainViewModel: BaseViewModel {
     weak var coordinator: AppCoordinator?
     var network: NetworkClient?
     
-    var items: [Currency]?{
+    var responseItem: CurrencyResponse?{
         didSet{
-            
+            self.didFinishLoadingItems?()
         }
     }
-    
+
     var didFinishLoadingItems: (() -> ())?
     
     required init(coordinator: AppCoordinator?, network: NetworkClient = NetworkClient()) {
@@ -27,11 +27,11 @@ class MainViewModel: BaseViewModel {
     }
     
     var numberOfItems: Int {
-        return items?.count ?? 0
+        return responseItem?.rates?.count ?? 0
     }
     
     func item(for indexPath: IndexPath) -> Currency?{
-        return items?[indexPath.row]
+        return responseItem?.rates?[indexPath.row]
     }
     
     func viewDidLoad() {
@@ -43,8 +43,8 @@ class MainViewModel: BaseViewModel {
         delegate?.didChangeState(.showLoading)
         network?.performRequest(CurrencyResponse.self, router: .GetCurrencies, success: { [weak self] (models) in
             self?.delegate?.didChangeState(.hideLoading)
-            self?.items = models.rates
-            self?.didFinishLoadingItems?()
+//            self?.items = models.rates
+            self?.responseItem = models
         }, failure: { (error) in
             self.delegate?.didChangeState(.showError(text: error.localizedDescription))
         })

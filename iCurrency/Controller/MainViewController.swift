@@ -27,6 +27,7 @@ class MainViewController: BaseTableViewController<MainViewModel>, iTableViewCont
     }
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeue() as TopCurrencyViewCell
+        view.configure(item: viewModel.responseItem?.base)
         return view
     }
     

@@ -29,7 +29,7 @@ class CurrencyView: UIView{
     
     lazy var currencyLabel: UILabel = {
         let label = UILabel()
-        label.text = "USD"
+        label.text = "-"
         label.font = UIFont.init(name: "Proxima Nova", size: 30)
         return label
     }()
@@ -61,9 +61,15 @@ class CurrencyView: UIView{
 
         ])
     }
-//    stack.frame = self.bounds
-//    stack.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
+    func configure(currency: Currency){
+        if let currencyImage = CurrencyImage.getImage(for: currency) {
+            flagImage.kf.indicatorType = .activity
+            flagImage.kf.setImage(with: currencyImage)
+        }
+        currencyLabel.text = currency.currency
+
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

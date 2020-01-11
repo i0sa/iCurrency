@@ -22,12 +22,12 @@ class TopCurrencyViewCell: UITableViewHeaderFooterView {
         return c
     }()
     
-    lazy var bottomArrowImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "BottomArrow")
-        image.tintColor = .white
-        return image
-    }()
+//    lazy var bottomArrowImage: UIImageView = {
+//        let image = UIImageView()
+//        image.image = UIImage(named: "BottomArrow")
+//        image.tintColor = .white
+//        return image
+//    }()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -45,18 +45,21 @@ class TopCurrencyViewCell: UITableViewHeaderFooterView {
     
     func setupConstraints(){
         stack.translatesAutoresizingMaskIntoConstraints = false
-        bottomArrowImage.translatesAutoresizingMaskIntoConstraints = false
         currencyView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             // Stack
             stack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             stack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             stack.heightAnchor.constraint(equalToConstant: 30),
-            // Flag Image
-            bottomArrowImage.widthAnchor.constraint(equalToConstant: 20),
 
         ])
 
+    }
+    
+    func configure(item: Any?){
+        guard let item = item as? String else { return }
+        let fakeCurrency = Currency(currency: item, value: 0)
+        self.currencyView.configure(currency: fakeCurrency)
     }
     
     required init?(coder aDecoder: NSCoder) {
