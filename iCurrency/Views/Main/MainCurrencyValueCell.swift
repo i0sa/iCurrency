@@ -27,7 +27,7 @@ class MainCurrencyValueCell: UITableViewCell {
     
     lazy var currencyValue: UILabel = {
         let label = UILabel()
-        label.text = "500"
+        label.text = "-"
         label.font = UIFont.init(name: "Proxima Nova", size: 30)
         return label
     }()

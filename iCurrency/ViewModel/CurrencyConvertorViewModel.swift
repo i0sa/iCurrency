@@ -13,9 +13,18 @@ class CurrencyConvertorViewModel: BaseViewModel {
     weak var coordinator: AppCoordinator?
     var network: NetworkClient?
     
+    var selectedCurrency: Currency?
+    var baseCurrency: Currency?
+    
     required init(coordinator: AppCoordinator?, network: NetworkClient = NetworkClient()) {
         self.coordinator = coordinator
         self.network = network
+    }
+    
+    convenience required init(coordinator: AppCoordinator?, selectedCurrency: Currency, base: Currency) {
+        self.init(coordinator: coordinator)
+        self.selectedCurrency = selectedCurrency
+        self.baseCurrency = base
     }
     
     func viewDidLoad() {

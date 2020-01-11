@@ -51,6 +51,7 @@ class MainViewModel: BaseViewModel {
     }
     
     func didSelectItem(at indexPath: IndexPath){
-        coordinator?.Main?.navigate(to: .CurrencyConvertor, with: .present)
+        guard let selected = item(for: indexPath), let base = responseItem?.base else { return }
+        coordinator?.Main?.navigate(to: .CurrencyConvertor(selectedCurrency: selected, base: base), with: .present)
     }
 }

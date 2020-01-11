@@ -31,7 +31,7 @@ class AppCoordinator: Coordinator {
     }()
     // MARK: Functions
     func start() {
-        let mainViewController = MainViewController(viewModel: MainViewModel(coordinator: self))
+        guard let mainViewController = Main?.viewController(for: .home, with: self) else { return }
         navigationController.setViewControllers([mainViewController], animated: true)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

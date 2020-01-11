@@ -57,9 +57,8 @@ class TopCurrencyViewCell: UITableViewHeaderFooterView {
     }
     
     func configure(item: Any?){
-        guard let item = item as? String else { return }
-        let fakeCurrency = Currency(currency: item, value: 0)
-        self.currencyView.configure(currency: fakeCurrency)
+        guard let item = item as? Currency else { return }
+        self.currencyView.configure(currency: item)
     }
     
     required init?(coder aDecoder: NSCoder) {
