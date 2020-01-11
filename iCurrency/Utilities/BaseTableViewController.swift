@@ -16,7 +16,7 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, iViewCon
     required init(viewModel: T) {
         self.viewModel = viewModel
         super.init(style: .grouped)
-        self.tableView.backgroundColor = .white
+        self.tableView.separatorStyle = .none
     }
     
     

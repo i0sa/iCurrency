@@ -35,8 +35,7 @@ class TopCurrencyViewCell: UITableViewHeaderFooterView {
     }
     
     func setup(){
-//        self.contentView.backgroundColor = UIColor(red:0.74, green:0.88, blue:0.90, alpha:1.0)
-        self.contentView.backgroundColor = .white
+//        self.contentView.backgroundColor = #colorLiteral(red: 0.9386721849, green: 0.9330919385, blue: 0.9429612756, alpha: 1)
         self.addSubview(stack)
         stack.addArrangedSubview(currencyView)
 //        stack.addArrangedSubview(bottomArrowImage)

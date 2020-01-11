@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.9.1)
+  - SkeletonView (1.8.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - SkeletonView
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - SkeletonView
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
+
+PODFILE CHECKSUM: b29d67a976b999053beecc72ee18fe947878754e
+
+COCOAPODS: 1.6.1

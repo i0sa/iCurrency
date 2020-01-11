@@ -30,7 +30,7 @@ class CurrencyView: UIView{
     lazy var currencyLabel: UILabel = {
         let label = UILabel()
         label.text = "USD"
-        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.font = UIFont.init(name: "Proxima Nova", size: 30)
         return label
     }()
     

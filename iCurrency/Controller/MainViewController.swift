@@ -13,9 +13,13 @@ class MainViewController: BaseTableViewController<MainViewModel>, iTableViewCont
     override func viewDidLoad() {
         registerCells()
         super.viewDidLoad()
-        title = "iCurrency Convertor"
+        self.tableView.backgroundColor = #colorLiteral(red: 0.899692595, green: 0.9141476154, blue: 0.9235479832, alpha: 1)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue() as MainCurrencyValueCell
@@ -28,7 +32,7 @@ class MainViewController: BaseTableViewController<MainViewModel>, iTableViewCont
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
+        return 110
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
