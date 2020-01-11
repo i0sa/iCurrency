@@ -15,7 +15,8 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, iViewCon
     
     required init(viewModel: T) {
         self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init(style: .grouped)
+        self.tableView.backgroundColor = .white
     }
     
     

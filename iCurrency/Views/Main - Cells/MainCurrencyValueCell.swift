@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCurrencyValueCell: UITableViewHeaderFooterView {
+class MainCurrencyValueCell: UITableViewCell {
 
     lazy var stack: UIStackView = {
         let s = UIStackView()
@@ -29,15 +29,17 @@ class MainCurrencyValueCell: UITableViewHeaderFooterView {
         return label
     }()
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }
     
     func setup(){
+        self.selectionStyle = .none
         self.contentView.backgroundColor = .white
         self.addSubview(stack)
         stack.addArrangedSubview(currencyView)
+        stack.addArrangedSubview(currencyValue)
 
         setupConstraints()
     }
@@ -48,13 +50,12 @@ class MainCurrencyValueCell: UITableViewHeaderFooterView {
         currencyView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             // Stack
-            stack.topAnchor.constraint(equalTo: self.topAnchor),
-            stack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            stack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            stack.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            stack.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            stack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
+            stack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            stack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             stack.heightAnchor.constraint(equalToConstant: 30),
             // Flag Image
-//            bottomArrowImage.xwidthAnchor.constraint(equalToConstant: 20),
 
         ])
     }
