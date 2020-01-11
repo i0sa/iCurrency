@@ -20,6 +20,12 @@
 		0321509D23C9C333003AF743 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321509C23C9C333003AF743 /* BaseTableViewController.swift */; };
 		0321509F23C9C90E003AF743 /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321509E23C9C90E003AF743 /* CurrencyView.swift */; };
 		032150A123C9CF9E003AF743 /* MainCurrencyValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150A023C9CF9E003AF743 /* MainCurrencyValueCell.swift */; };
+		032150A323C9DB56003AF743 /* CurrencyConvertorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150A223C9DB56003AF743 /* CurrencyConvertorViewController.swift */; };
+		032150A523C9DB61003AF743 /* CurrencyConvertorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150A423C9DB61003AF743 /* CurrencyConvertorViewModel.swift */; };
+		032150BC23C9DBD8003AF743 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150AE23C9DBD7003AF743 /* AppNavigator.swift */; };
+		032150C123C9DBD8003AF743 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150B323C9DBD7003AF743 /* MainNavigator.swift */; };
+		032150C223C9DBD8003AF743 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150B423C9DBD7003AF743 /* Coordinator.swift */; };
+		032150C523C9DC6E003AF743 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150C423C9DC6E003AF743 /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		0321509C23C9C333003AF743 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		0321509E23C9C90E003AF743 /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		032150A023C9CF9E003AF743 /* MainCurrencyValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCurrencyValueCell.swift; sourceTree = "<group>"; };
+		032150A223C9DB56003AF743 /* CurrencyConvertorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorViewController.swift; sourceTree = "<group>"; };
+		032150A423C9DB61003AF743 /* CurrencyConvertorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorViewModel.swift; sourceTree = "<group>"; };
+		032150AE23C9DBD7003AF743 /* AppNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
+		032150B323C9DBD7003AF743 /* MainNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
+		032150B423C9DBD7003AF743 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		032150C423C9DC6E003AF743 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				0321507823C9B755003AF743 /* MainViewController.swift */,
+				032150A223C9DB56003AF743 /* CurrencyConvertorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -103,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				0321509A23C9C1A4003AF743 /* MainViewModel.swift */,
+				032150A423C9DB61003AF743 /* CurrencyConvertorViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -110,8 +124,7 @@
 		0321508B23C9BA01003AF743 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0321509E23C9C90E003AF743 /* CurrencyView.swift */,
-				0321508F23C9BB85003AF743 /* Main - Cells */,
+				0321508F23C9BB85003AF743 /* Main */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,18 +137,20 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		0321508F23C9BB85003AF743 /* Main - Cells */ = {
+		0321508F23C9BB85003AF743 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0321509E23C9C90E003AF743 /* CurrencyView.swift */,
 				0321508D23C9BB7B003AF743 /* TopCurrencyViewCell.swift */,
 				032150A023C9CF9E003AF743 /* MainCurrencyValueCell.swift */,
 			);
-			path = "Main - Cells";
+			path = Main;
 			sourceTree = "<group>";
 		};
 		0321509023C9BBB6003AF743 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				032150A723C9DBD7003AF743 /* Coordinator */,
 				0321509123C9BBC2003AF743 /* UITableView+Extentions.swift */,
 				0321509823C9BEFB003AF743 /* BaseViewModel.swift */,
 				0321509C23C9C333003AF743 /* BaseTableViewController.swift */,
@@ -150,6 +165,17 @@
 				0321509623C9BDEB003AF743 /* iTableViewControllerProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		032150A723C9DBD7003AF743 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				032150AE23C9DBD7003AF743 /* AppNavigator.swift */,
+				032150B323C9DBD7003AF743 /* MainNavigator.swift */,
+				032150C423C9DC6E003AF743 /* AppCoordinator.swift */,
+				032150B423C9DBD7003AF743 /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,13 +250,19 @@
 			files = (
 				0321509D23C9C333003AF743 /* BaseTableViewController.swift in Sources */,
 				0321509F23C9C90E003AF743 /* CurrencyView.swift in Sources */,
+				032150C523C9DC6E003AF743 /* AppCoordinator.swift in Sources */,
+				032150C223C9DBD8003AF743 /* Coordinator.swift in Sources */,
 				032150A123C9CF9E003AF743 /* MainCurrencyValueCell.swift in Sources */,
 				0321509523C9BDD7003AF743 /* iViewControllerProtocol.swift in Sources */,
 				0321509223C9BBC2003AF743 /* UITableView+Extentions.swift in Sources */,
 				0321507923C9B755003AF743 /* MainViewController.swift in Sources */,
 				0321509923C9BEFB003AF743 /* BaseViewModel.swift in Sources */,
+				032150A523C9DB61003AF743 /* CurrencyConvertorViewModel.swift in Sources */,
 				0321509723C9BDEB003AF743 /* iTableViewControllerProtocol.swift in Sources */,
+				032150BC23C9DBD8003AF743 /* AppNavigator.swift in Sources */,
+				032150A323C9DB56003AF743 /* CurrencyConvertorViewController.swift in Sources */,
 				0321507723C9B755003AF743 /* AppDelegate.swift in Sources */,
+				032150C123C9DBD8003AF743 /* MainNavigator.swift in Sources */,
 				0321508E23C9BB7B003AF743 /* TopCurrencyViewCell.swift in Sources */,
 				0321509B23C9C1A4003AF743 /* MainViewModel.swift in Sources */,
 			);

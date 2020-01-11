@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MainViewModel: BaseViewModel {
+class CurrencyConvertorViewModel: BaseViewModel {
     var coordinator: AppCoordinator?
     
     required init(coordinator: AppCoordinator?) {
@@ -17,9 +17,5 @@ class MainViewModel: BaseViewModel {
     
     func viewDidLoad() {
         print("Hey !")
-    }
-    
-    func didSelectItem(at indexPath: IndexPath){
-        coordinator?.Main?.navigate(to: .CurrencyConvertor, with: .present)
     }
 }

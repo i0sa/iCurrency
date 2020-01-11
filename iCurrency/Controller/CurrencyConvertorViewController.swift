@@ -8,12 +8,11 @@
 
 import UIKit
 
-class MainViewController: BaseTableViewController<MainViewModel>, iTableViewControllerProtocol {
+class CurrencyConvertorViewController: BaseTableViewController<CurrencyConvertorViewModel>, iTableViewControllerProtocol {
 
     override func viewDidLoad() {
         registerCells()
         super.viewDidLoad()
-        title = "iCurrency Convertor"
     }
     
 
@@ -30,11 +29,6 @@ class MainViewController: BaseTableViewController<MainViewModel>, iTableViewCont
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 70
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectItem(at: indexPath)
-    }
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

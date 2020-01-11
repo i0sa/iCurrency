@@ -11,4 +11,6 @@ import UIKit
 
 protocol BaseViewModel {
     func viewDidLoad()
+    var coordinator: AppCoordinator? { get set }
+    init(coordinator: AppCoordinator?)
 }
