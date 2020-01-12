@@ -13,6 +13,7 @@ enum NavigatorType{
     case push
     case present
     case root
+    case pop
 }
 
 protocol AppNavigator: class {
@@ -37,7 +38,9 @@ extension AppNavigator {
             coordinator?.navigationController.present(viewController, animated: true)
         case .root:
             coordinator?.navigationController.setViewControllers([viewController], animated: true)
-            
+        case .pop:
+            coordinator?.navigationController.popViewController(animated: true)
+
         }
     }
 

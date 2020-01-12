@@ -27,6 +27,7 @@ class CurrencyConvertorViewModel: BaseViewModel {
         self.baseCurrency = base
     }
     
+    
     func viewDidLoad() {
         print("Hey !")
     }

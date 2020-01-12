@@ -15,19 +15,19 @@ class CurrencyConvertorCell: UITableViewCell {
     lazy var stack: UIStackView = {
         let s = UIStackView()
         s.axis = .vertical
-        s.distribution = UIStackView.Distribution.fillProportionally
+        s.distribution = UIStackView.Distribution.fill
         s.alignment = .center
-        s.spacing = 13
+        s.spacing = 20
         
         return s
     }()
     
     lazy var inputField: UITextField = {
         let field = UITextField()
-        field.placeholder = "Enter Amount"
         field.textAlignment = .center
-        field.font = UIFont.init(name: "Proxima Nova", size: 30)
-        field.borderStyle = UITextField.BorderStyle.roundedRect
+        field.textColor = .white
+        field.font = UIFont.init(name: "Proxima Nova", size: 60)
+        field.text = "25000"
         return field
     }()
     
@@ -74,7 +74,6 @@ class CurrencyConvertorCell: UITableViewCell {
             stack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             inputField.heightAnchor.constraint(equalToConstant: 60),
             currencyView.heightAnchor.constraint(equalToConstant: 60),
-            currencyView.widthAnchor.constraint(equalToConstant: 150),
 
         ])
         
@@ -85,7 +84,11 @@ class CurrencyConvertorCell: UITableViewCell {
         currencyView.configure(currency: item)
         if(isBaseCurrency){
         } else {
-            backgroundColor = .black
+            backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5547677654)
+            inputField.textColor = .black
+            currencyView.currencyLabel.textColor = .black
+            inputField.isUserInteractionEnabled = false
+
         }
         currencyView.configure(currency: item)
     }

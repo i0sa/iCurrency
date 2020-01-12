@@ -20,14 +20,21 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, iViewCon
         self.tableView.separatorStyle = .none
 
     }
-    
+    //Looks for single or multiple taps.
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.delegate = self
         self.viewModel.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))        
+        view.addGestureRecognizer(tap)
+        
     }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

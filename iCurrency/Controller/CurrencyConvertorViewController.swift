@@ -15,10 +15,21 @@ class CurrencyConvertorViewController: BaseTableViewController<CurrencyConvertor
     // We can expect a scenario where the client wants to convert between 3 currenies, or such, so it has to be very dynamic
     let pastelView = PastelView()
 
+    lazy var closeButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setImage(UIImage(named: "close"), for: .normal)
+        btn.addTarget(self, action: #selector(didPressClosePage(_:)), for: .touchUpInside)
+        return btn
+    }()
+    
+
+    
     override func viewDidLoad() {
         registerCells()
         super.viewDidLoad()
         addPastelView()
+        self.view.addSubview(closeButton)
+        setupConstraints()
         tableView.isScrollEnabled = false
     }
     
@@ -45,6 +56,17 @@ class CurrencyConvertorViewController: BaseTableViewController<CurrencyConvertor
 
     }
     
+    func setupConstraints(){
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+        closeButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20),
+        closeButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+        closeButton.widthAnchor.constraint(equalToConstant: 40),
+        closeButton.heightAnchor.constraint(equalToConstant: 40)
+        
+        ])
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         pastelView.startAnimation()
@@ -60,6 +82,9 @@ class CurrencyConvertorViewController: BaseTableViewController<CurrencyConvertor
         return cell
     }
 
+    @objc func didPressClosePage(_ sender: UIButton){
+        self.navigationController?.popViewController(animated: true)
+    }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return (UIScreen.main.bounds.height - 80) / 2
     }
