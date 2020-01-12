@@ -42,5 +42,6 @@ class CurrencyConvertorViewModel: BaseViewModel {
     
     func viewDidLoad() {
         print("Hey !")
+        convert()
     }
 }

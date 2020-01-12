@@ -27,12 +27,7 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, iViewCon
         super.viewDidLoad()
         self.viewModel.delegate = self
         self.viewModel.viewDidLoad()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))        
-        view.addGestureRecognizer(tap)
         
-    }
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
     }
 
     

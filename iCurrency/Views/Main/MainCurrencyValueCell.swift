@@ -67,7 +67,7 @@ class MainCurrencyValueCell: UITableViewCell {
     func configure(item: Any?){
         guard let item = item as? Currency else { return }
         currencyView.configure(currency: item)
-        self.currencyValue.text = "\(item.value ?? 0)"
+        self.currencyValue.text = "\(item.rate ?? 0)"
     }
     
     required init?(coder aDecoder: NSCoder) {

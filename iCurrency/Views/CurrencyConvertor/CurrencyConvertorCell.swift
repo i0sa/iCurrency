@@ -94,8 +94,7 @@ class CurrencyConvertorCell: UITableViewCell {
             currencyView.configure(currency: item)
             inputField.text = "\(item.value ?? 0)"
         }
-        if(isBaseCurrency){
-        } else {
+        if(!isBaseCurrency) {
             backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5547677654)
             inputField.textColor = .black
             currencyView.currencyLabel.textColor = .black

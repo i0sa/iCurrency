@@ -14,15 +14,20 @@ class CurrencyConvertorViewController: BaseTableViewController<CurrencyConvertor
     // Why did i do this as in tableview?
     // We can expect a scenario where the client wants to convert between 3 currenies, or such, so it has to be very dynamic
     let pastelView = PastelView()
-
+    
     lazy var closeButton: UIButton = {
         let btn = UIButton(type: .custom)
+        btn.imageView?.tintColor = .white
         btn.setImage(UIImage(named: "close"), for: .normal)
         btn.addTarget(self, action: #selector(didPressClosePage(_:)), for: .touchUpInside)
         return btn
     }()
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        pastelView.startAnimation()
+        
+    }
     
     override func viewDidLoad() {
         registerCells()
@@ -31,9 +36,11 @@ class CurrencyConvertorViewController: BaseTableViewController<CurrencyConvertor
         self.view.addSubview(closeButton)
         setupConstraints()
         tableView.isScrollEnabled = false
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
-
+    
     func addPastelView(){
         
         // Custom Direction
@@ -59,7 +66,7 @@ class CurrencyConvertorViewController: BaseTableViewController<CurrencyConvertor
     func setupConstraints(){
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        closeButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20),
+        closeButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40),
         closeButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
         closeButton.widthAnchor.constraint(equalToConstant: 40),
         closeButton.heightAnchor.constraint(equalToConstant: 40)
@@ -67,11 +74,12 @@ class CurrencyConvertorViewController: BaseTableViewController<CurrencyConvertor
         ])
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        pastelView.startAnimation()
 
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue() as CurrencyConvertorCell
         if(indexPath.row == 0){
@@ -83,7 +91,7 @@ class CurrencyConvertorViewController: BaseTableViewController<CurrencyConvertor
     }
 
     @objc func didPressClosePage(_ sender: UIButton){
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return (UIScreen.main.bounds.height - 80) / 2
