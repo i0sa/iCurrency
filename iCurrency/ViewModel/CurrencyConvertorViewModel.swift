@@ -14,7 +14,19 @@ class CurrencyConvertorViewModel: BaseViewModel {
     var network: NetworkClient?
     
     var selectedCurrency: Currency?
-    var baseCurrency: Currency?
+    var baseCurrency: Currency?{
+        didSet{
+            convert()
+        }
+    }
+    
+    var changeConvertValue: (() -> ())?
+
+    private func convert(){
+        guard let baseValue = baseCurrency?.value, let selectedRate = selectedCurrency?.rate else { return }
+        self.selectedCurrency?.value = baseValue * selectedRate
+        changeConvertValue?()
+    }
     
     required init(coordinator: AppCoordinator?, network: NetworkClient = NetworkClient()) {
         self.coordinator = coordinator

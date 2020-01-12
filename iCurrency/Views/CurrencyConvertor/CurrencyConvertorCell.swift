@@ -12,6 +12,9 @@ import Pastel
 
 class CurrencyConvertorCell: UITableViewCell {
 
+    var viewModel: CurrencyConvertorViewModel?
+    var didChangeValue: ((Currency) -> ())?
+    
     lazy var stack: UIStackView = {
         let s = UIStackView()
         s.axis = .vertical
@@ -26,11 +29,15 @@ class CurrencyConvertorCell: UITableViewCell {
         let field = UITextField()
         field.textAlignment = .center
         field.textColor = .white
+        field.keyboardType = .numberPad
         field.font = UIFont.init(name: "Proxima Nova", size: 60)
-        field.text = "25000"
+        field.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         return field
     }()
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        viewModel?.baseCurrency?.value = Double(textField.text ?? "0")
+    }
     
     lazy var currencyView: CurrencyView = {
         let c = CurrencyView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -80,17 +87,24 @@ class CurrencyConvertorCell: UITableViewCell {
     }
     
     func configure(item: Any?, isBaseCurrency: Bool = false){
-        guard let item = item as? Currency else { return }
-        currencyView.configure(currency: item)
+        guard let item = item as? CurrencyConvertorViewModel else { return }
+        self.viewModel = item
+        let currencyItem: Currency? = isBaseCurrency ? item.baseCurrency : item.selectedCurrency
+        if let item = currencyItem {
+            currencyView.configure(currency: item)
+            inputField.text = "\(item.value ?? 0)"
+        }
         if(isBaseCurrency){
         } else {
             backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5547677654)
             inputField.textColor = .black
             currencyView.currencyLabel.textColor = .black
             inputField.isUserInteractionEnabled = false
-
+            self.viewModel?.changeConvertValue = {
+                let value = self.viewModel?.selectedCurrency?.value
+                self.inputField.text = "\(value ?? 0)"
+            }
         }
-        currencyView.configure(currency: item)
     }
     
     required init?(coder aDecoder: NSCoder) {

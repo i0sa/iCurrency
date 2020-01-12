@@ -11,5 +11,13 @@ import Foundation
 
 struct Currency {
     var currency: String?
+    var rate: Double?
     var value: Double?
+    
+    init(currency: String?, rate: Double?, value: Double? = 1) {
+        self.currency = currency
+        self.rate = rate
+        self.value = value
+    }
+
 }

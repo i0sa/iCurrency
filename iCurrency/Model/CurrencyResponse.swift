@@ -28,14 +28,16 @@ struct CurrencyResponse: Codable {
         self.success = try container.decode(Bool.self, forKey: .success)
         self.timestamp = try container.decode(Int.self, forKey: .timestamp)
         if let oldBase = try? container.decode(String.self, forKey: .base) {
-            self.base = Currency.init(currency: oldBase, value: 0)
+            // set default value of "Base" currency to 1
+            // either way, it is also default set to 1, in model initilizer
+            self.base = Currency.init(currency: oldBase, rate: 0, value: 1)
         } else {
             self.base = nil
         }
         self.date = try container.decode(String.self, forKey: .date)
 
         let oldRates = try container.decode([String: Double].self, forKey: .rates)
-        self.rates = oldRates.map({ Currency.init(currency: $0.key, value: $0.value) })
+        self.rates = oldRates.map({ Currency.init(currency: $0.key, rate: $0.value) })
     }
     
     func encode(to encoder: Encoder) throws {

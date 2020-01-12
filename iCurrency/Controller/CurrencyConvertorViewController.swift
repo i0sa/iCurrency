@@ -75,9 +75,9 @@ class CurrencyConvertorViewController: BaseTableViewController<CurrencyConvertor
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue() as CurrencyConvertorCell
         if(indexPath.row == 0){
-            cell.configure(item: viewModel.baseCurrency, isBaseCurrency: true)
+            cell.configure(item: viewModel, isBaseCurrency: true)
         } else {
-            cell.configure(item: viewModel.selectedCurrency)
+            cell.configure(item: viewModel)
         }
         return cell
     }
