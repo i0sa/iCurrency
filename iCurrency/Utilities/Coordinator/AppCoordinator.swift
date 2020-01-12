@@ -31,7 +31,7 @@ class AppCoordinator: Coordinator {
     }()
     // MARK: Functions
     func start() {
-        guard let mainViewController = Main?.viewController(for: .home, with: self) else { return }
+        guard let mainViewController = Main?.viewController(for: .CurrencyConvertor(selectedCurrency: Currency(currency: "USD", value: 1), base: Currency(currency: "EURO", value: 1)), with: self) else { return }
         navigationController.setViewControllers([mainViewController], animated: true)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031795DD23CB5052004B1A3D /* CurrencyConvertorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031795DC23CB5052004B1A3D /* CurrencyConvertorCell.swift */; };
 		0321507723C9B755003AF743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321507623C9B755003AF743 /* AppDelegate.swift */; };
 		0321507923C9B755003AF743 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0321507823C9B755003AF743 /* MainViewController.swift */; };
 		0321507E23C9B757003AF743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0321507D23C9B757003AF743 /* Assets.xcassets */; };
@@ -31,7 +32,7 @@
 		032150D223CA5914003AF743 /* Proxima Nova Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 032150CA23CA5914003AF743 /* Proxima Nova Extrabold.otf */; };
 		032150D323CA5914003AF743 /* Proxima Nova Alt Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 032150CB23CA5914003AF743 /* Proxima Nova Alt Light.otf */; };
 		032150D423CA5914003AF743 /* Proxima Nova Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 032150CC23CA5914003AF743 /* Proxima Nova Black.otf */; };
-		032150D523CA5914003AF743 /* Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 032150CD23CA5914003AF743 /* Proxima Nova Bold.otf */; };
+		032150D523CA5914003AF743 /* Proxima Nova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 032150CD23CA5914003AF743 /* Proxima Nova-Bold.otf */; };
 		032150D623CA5914003AF743 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 032150CE23CA5914003AF743 /* ProximaNova-Regular.otf */; };
 		032150D723CA5914003AF743 /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 032150CF23CA5914003AF743 /* Proxima Nova Thin.otf */; };
 		032150DB23CA5C78003AF743 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150DA23CA5C78003AF743 /* NetworkClient.swift */; };
@@ -42,10 +43,12 @@
 		032150E623CA677D003AF743 /* Currencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150E523CA677D003AF743 /* Currencies.swift */; };
 		032150E823CA7A1D003AF743 /* BaseViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150E723CA7A1D003AF743 /* BaseViewModelDelegate.swift */; };
 		032150EA23CA8591003AF743 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150E923CA8591003AF743 /* Currency.swift */; };
+		032150EC23CA87D4003AF743 /* Double+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032150EB23CA87D4003AF743 /* Double+Extentions.swift */; };
 		CBAC60598D9410627661E835 /* Pods_iCurrency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16B127495220B0160E379B1 /* Pods_iCurrency.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031795DC23CB5052004B1A3D /* CurrencyConvertorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorCell.swift; sourceTree = "<group>"; };
 		0321507323C9B755003AF743 /* iCurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0321507623C9B755003AF743 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0321507823C9B755003AF743 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +75,7 @@
 		032150CA23CA5914003AF743 /* Proxima Nova Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Extrabold.otf"; sourceTree = "<group>"; };
 		032150CB23CA5914003AF743 /* Proxima Nova Alt Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Light.otf"; sourceTree = "<group>"; };
 		032150CC23CA5914003AF743 /* Proxima Nova Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Black.otf"; sourceTree = "<group>"; };
-		032150CD23CA5914003AF743 /* Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold.otf"; sourceTree = "<group>"; };
+		032150CD23CA5914003AF743 /* Proxima Nova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova-Bold.otf"; sourceTree = "<group>"; };
 		032150CE23CA5914003AF743 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		032150CF23CA5914003AF743 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
 		032150D923CA5C20003AF743 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 		032150E523CA677D003AF743 /* Currencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
 		032150E723CA7A1D003AF743 /* BaseViewModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModelDelegate.swift; sourceTree = "<group>"; };
 		032150E923CA8591003AF743 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		032150EB23CA87D4003AF743 /* Double+Extentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extentions.swift"; sourceTree = "<group>"; };
+		032150ED23CA89DB003AF743 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AF9A4792FA48BA5FA91E48A3 /* Pods-iCurrency.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCurrency.release.xcconfig"; path = "Target Support Files/Pods-iCurrency/Pods-iCurrency.release.xcconfig"; sourceTree = "<group>"; };
 		B16B127495220B0160E379B1 /* Pods_iCurrency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCurrency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4840E1CEB0CCF49E012F339 /* Pods-iCurrency.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCurrency.debug.xcconfig"; path = "Target Support Files/Pods-iCurrency/Pods-iCurrency.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031795DE23CB5572004B1A3D /* CurrencyConvertor */ = {
+			isa = PBXGroup;
+			children = (
+				031795DC23CB5052004B1A3D /* CurrencyConvertorCell.swift */,
+			);
+			path = CurrencyConvertor;
+			sourceTree = "<group>";
+		};
 		0321506A23C9B755003AF743 = {
 			isa = PBXGroup;
 			children = (
@@ -126,8 +139,8 @@
 				0321509323C9BDAF003AF743 /* Protocols */,
 				0321509023C9BBB6003AF743 /* Utilities */,
 				0321508823C9B9EF003AF743 /* Controller */,
-				0321508B23C9BA01003AF743 /* Views */,
 				0321508A23C9B9F8003AF743 /* ViewModel */,
+				0321508B23C9BA01003AF743 /* Views */,
 				0321508923C9B9F3003AF743 /* Model */,
 				0321507D23C9B757003AF743 /* Assets.xcassets */,
 				0321507F23C9B757003AF743 /* LaunchScreen.storyboard */,
@@ -166,6 +179,7 @@
 		0321508B23C9BA01003AF743 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				031795DE23CB5572004B1A3D /* CurrencyConvertor */,
 				0321508F23C9BB85003AF743 /* Main */,
 			);
 			path = Views;
@@ -197,6 +211,7 @@
 			children = (
 				032150A723C9DBD7003AF743 /* Coordinator */,
 				0321509123C9BBC2003AF743 /* UITableView+Extentions.swift */,
+				032150EB23CA87D4003AF743 /* Double+Extentions.swift */,
 				0321509823C9BEFB003AF743 /* BaseViewModel.swift */,
 				032150E723CA7A1D003AF743 /* BaseViewModelDelegate.swift */,
 				0321509C23C9C333003AF743 /* BaseTableViewController.swift */,
@@ -216,6 +231,7 @@
 		032150A723C9DBD7003AF743 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				032150ED23CA89DB003AF743 /* README.md */,
 				032150AE23C9DBD7003AF743 /* AppNavigator.swift */,
 				032150B323C9DBD7003AF743 /* MainNavigator.swift */,
 				032150C423C9DC6E003AF743 /* AppCoordinator.swift */,
@@ -240,7 +256,7 @@
 				032150CA23CA5914003AF743 /* Proxima Nova Extrabold.otf */,
 				032150CB23CA5914003AF743 /* Proxima Nova Alt Light.otf */,
 				032150CC23CA5914003AF743 /* Proxima Nova Black.otf */,
-				032150CD23CA5914003AF743 /* Proxima Nova Bold.otf */,
+				032150CD23CA5914003AF743 /* Proxima Nova-Bold.otf */,
 				032150CE23CA5914003AF743 /* ProximaNova-Regular.otf */,
 				032150CF23CA5914003AF743 /* Proxima Nova Thin.otf */,
 			);
@@ -346,7 +362,7 @@
 			files = (
 				032150E123CA6109003AF743 /* Currencies.json in Resources */,
 				032150D023CA5914003AF743 /* Proxima Nova Alt Thin.otf in Resources */,
-				032150D523CA5914003AF743 /* Proxima Nova Bold.otf in Resources */,
+				032150D523CA5914003AF743 /* Proxima Nova-Bold.otf in Resources */,
 				032150D623CA5914003AF743 /* ProximaNova-Regular.otf in Resources */,
 				032150D223CA5914003AF743 /* Proxima Nova Extrabold.otf in Resources */,
 				032150D323CA5914003AF743 /* Proxima Nova Alt Light.otf in Resources */,
@@ -394,6 +410,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-iCurrency/Pods-iCurrency-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Pastel/Pastel.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -402,6 +419,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pastel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,10 +438,12 @@
 				032150E823CA7A1D003AF743 /* BaseViewModelDelegate.swift in Sources */,
 				0321509F23C9C90E003AF743 /* CurrencyView.swift in Sources */,
 				032150C523C9DC6E003AF743 /* AppCoordinator.swift in Sources */,
+				032150EC23CA87D4003AF743 /* Double+Extentions.swift in Sources */,
 				032150C223C9DBD8003AF743 /* Coordinator.swift in Sources */,
 				032150DD23CA5C8F003AF743 /* APIRouter.swift in Sources */,
 				032150A123C9CF9E003AF743 /* MainCurrencyValueCell.swift in Sources */,
 				032150E423CA6136003AF743 /* CurrencyImage.swift in Sources */,
+				031795DD23CB5052004B1A3D /* CurrencyConvertorCell.swift in Sources */,
 				032150DB23CA5C78003AF743 /* NetworkClient.swift in Sources */,
 				0321509523C9BDD7003AF743 /* iViewControllerProtocol.swift in Sources */,
 				0321509223C9BBC2003AF743 /* UITableView+Extentions.swift in Sources */,

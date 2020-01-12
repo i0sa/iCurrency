@@ -9,5 +9,6 @@ target 'iCurrency' do
 pod "Alamofire"
 pod "Kingfisher"
 pod 'Toast-Swift', '~> 5.0.1'
+pod "Pastel"
 
 end

@@ -21,7 +21,7 @@ class CurrencyView: UIView{
     lazy var flagImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "example")
-        image.contentMode = .scaleAspectFill
+        image.contentMode = UIView.ContentMode.scaleAspectFill
         image.layer.cornerRadius = 10
         image.clipsToBounds = true
         return image
